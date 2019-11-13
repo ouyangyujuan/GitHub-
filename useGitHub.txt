@@ -1,0 +1,27 @@
+一、使用git提交到GitHub
+	1、查看当前账号
+	   git config user.name
+	2、查看当前邮箱
+	   git config user.email
+	3、修改用户名
+	   git config --global user.name "Your_username"
+	4、修改邮箱
+	   git config --global user.email "Your_email"
+
+二、添加密钥
+    1、删除.ssh文件夹
+	2、在下载好的Git中的bin目录下打开bash.exe输入命令ssh-keygen -t rsa -C "username" (注：username为你git上的用户名)，如果执行成功。返回：
+
+       Generating public/private rsa key pair.
+       Enter file in which to save the key (/Users/username/.ssh/id_rsa): //这里的username是电脑上的用户名，这个地址也是文件的存储地址，然后我们按
+
+      回车，如果你以前有存储地址会返回/Users/your username/.ssh/id_rsa already exists.Overwrite (y/n)?直接输入y回车。如果以前没有储存地址就会出现
+
+      Enter passphrase(empty for no passphrase);也直接回车，两种情况回车后都会出现 Enter same passphrase again 然后接着回车会显示一长串内容其中
+
+      还有一些..o.. o oo .oS. 之类的代码，这说明SSH key就已经生成了。文件目录就是：username/.ssh/id_rsa.pub.
+   
+    3、然后找到系统自动在.ssh文件夹下生成两个文件，id_rsa和id_rsa.pub，用记事本打开id_rsa.pub将全部的内容复制
+	4、打开GitHub官网，登录自己的账户，进入设置 settings---》 SSH and GPG keys--->右上角addSSH
+	5、复制.ssh下的id_rsa.pub内容粘贴到添加密钥
+	6、仍然在bash.exe中输入ssh -T git@github.com然后会跳出一堆内容你只需输入yes回车就完事了，然后他会提示你成功了。

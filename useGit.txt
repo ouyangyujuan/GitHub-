@@ -1,0 +1,13 @@
+1、克隆项目
+   git clone  项目地址
+2、初始化项目
+    git init 
+3、对项目进行增删改查
+4、添加
+   git add .
+5、提交到本地仓库
+   git commit -m '对项目进行的操作'
+6、提交之前拉一次代码
+    git fetch && git merge orgin/develop或者 git pull orgin master
+7、push到git上
+   git push orgin master
